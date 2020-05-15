@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+<body>
+    <h1>Welcome to The X-Files</h1>
+    <h2>Finding UFO</h2>
+    <form action='/sightings/results'>
+        <label for="city">City : </label>
+        <input type="text" name ="city" placeholder="Corona">
+
+        <label for="state">State : </label>
+        <input type="text" name ="state" placeholder="CA">
+
+        <label for="shape">Shape : </label>
+        <input type="text" name ="shape" placeholder="sphere">
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

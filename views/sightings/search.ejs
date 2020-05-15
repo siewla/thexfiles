@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+<body>
+    <h1>The X-Files</h1>
+    <% results.forEach((result) => { %>
+        <h4>Description: <%=result.description%></h4>
+        <ul>
+            <li>Date: <%=result.date%></li> 
+            <li>City: <%=result.city%></li>  
+            <li>State: <%=result.state%></li>  
+            <li>Shape: <%=result.shape%></li>   
+            <li>Duration: <%=result.duration%></li>  
+        </ul>
+    <% }) %>
+</body>
+</html>
