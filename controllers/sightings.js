@@ -23,6 +23,7 @@ const mapQueryData = (queryObj, key, value) => {
   if (isValidQueryKey(key)) {
     queryObj[key] = value;
   }
+
   return queryObj;
 };
 
@@ -34,13 +35,15 @@ const buildQueriesObject = (queries) => {
     const [key, value] = query.split(KEY_VALUE_DELIMITER);
     mapQueryData(resultsQuery, key, value);
   });
+
   return resultsQuery;
 };
 
 const findSightings = (queryString) => {
   const query = buildQueriesObject(queryString);
+
   return Object.keys(query).reduce((data, filterKey) => {
-    if (query[filterKey] !== "") {
+    if (query[filterKey]) {
       let filterValue = query[filterKey];
       return searchSightings(data, filterKey, filterValue);
     } else {
