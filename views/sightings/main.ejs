@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <%- include('../partials/head.ejs') %>
-</head>
-<body>
-    <h1>Welcome to The X-Files</h1>
-    <h2>Finding UFO</h2>
-    <form action='/sightings/'>
-        <label for="city">City : </label>
-        <input type="text" name ="city" placeholder="Corona">
+<h1>Welcome to The X-Files</h1>
+<h2>Finding UFO</h2>
+<form action='/'>
 
-        <label for="state">State : </label>
-        <input type="text" name ="state" placeholder="CA">
+  <label for="city">City : </label>
+  <input type="text" name="city" placeholder="Corona" value="<%=query.city %>" />
 
-        <label for="shape">Shape : </label>
-        <input type="text" name ="shape" placeholder="sphere">
+  <label for="state">State : </label>
+  <input type="text" name="state" placeholder="CA" value="<%=query.state %>" />
 
-        <input type="submit" value="Submit">
-    </form>
-</body>
-</html>
+  <label for="shape">Shape : </label>
+  <input type="text" name="shape" placeholder="sphere" value="<%=query.shape %>" />
+
+  <label for="shape">Date : </label>
+  <input type="date" name="date" value="<%=query.date %>" />
+
+  <input type="submit" value="Submit">
+
+</form>
