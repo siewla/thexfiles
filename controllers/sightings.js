@@ -1,5 +1,3 @@
-const moment = require("moment");
-
 const QUERY_DELIMITER = "&";
 const KEY_VALUE_DELIMITER = "=";
 const VALID_QUERY_KEYS = ["date", "shape", "state", "city"];
@@ -11,8 +9,12 @@ const searchSightings = (data, key, query) => {
     if (key !== VALID_QUERY_KEYS[0]) {
       return sighting[key].toLowerCase() === query.toLowerCase();
     } else {
-      const formattedDate = moment(sighting[key]).format("YYYY-MM-DD");
-      return moment(query).isSame(formattedDate);
+      const formattedDate = new Date(sighting[key]);
+      const queryFormattedDate = new Date(query);
+      return (
+        formattedDate.toLocaleDateString() ===
+        queryFormattedDate.toLocaleDateString()
+      );
     }
   });
 };
